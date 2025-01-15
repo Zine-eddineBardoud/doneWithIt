@@ -4,9 +4,8 @@ import { MaterialCommunityIcons } from '@expo/vector-icons'
 import defaultStyles from '../config/styles';
 import Text from './Text';
 import PickerItem from './PickerItem';
-import colors from '../config/colors';
 
-const Picker = ({ icon, placeholder, items, onSelectItem, selectedItem, PickerItemComponent = PickerItem, numberOfColumns = 1 }) => {
+const AppPicker = ({ icon, placeholder, items, onSelectItem, selectedItem, PickerItemComponent = PickerItem, numberOfColumns = 1 }) => {
     const [modalVisible, setModalVisible] = useState(false);
 
     return (
@@ -79,4 +78,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default Picker;
+export default AppPicker;

@@ -11,36 +11,32 @@ const validationSchema = Yup.object().shape({
 const LoginScreen = () => {
     return (
         <Screen style={styles.container}>
-            <Image
-                style={styles.logo}
-                source={require('../assets/logo-red.png')}
-            />
+            <Image style={styles.logo} source={require('../assets/logo-red.png')} />
+
             <Form
                 initialValues={{ email: '', password: '' }}
                 onSubmit={values => console.log(values)}
                 validationSchema={validationSchema}
             >
                 <FormField
-                    name='email'
-                    icon='email'
-                    placeholder='Email'
-                    autoCapitalize='none'
+                    autoCapitalize="none"
                     autoCorrect={false}
-                    keyboardType='email-address'
-                    textContentType='emailAddress' // only for IOS
+                    icon="email"
+                    keyboardType="email-address"
+                    name="email"
+                    placeholder="Email"
+                    textContentType="emailAddress" // only for IOS
                 />
                 <FormField
-                    name='password'
-                    icon='lock'
-                    placeholder='Password'
-                    autoCapitalize='none'
+                    autoCapitalize="none"
                     autoCorrect={false}
-                    textContentType='password' // only for IOS
+                    icon="lock"
+                    name="password"
+                    placeholder="Password"
                     secureTextEntry
+                    textContentType="password"  // only for IOS
                 />
-                <SubmitButton
-                    title='Login'
-                />
+                <SubmitButton title='Login' />
             </Form>
         </Screen>
     )

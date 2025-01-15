@@ -1,9 +1,9 @@
-import { StyleSheet, View, TextInput } from 'react-native'
-import React from 'react'
-import { MaterialCommunityIcons } from '@expo/vector-icons'
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { StyleSheet, View } from 'react-native';
 import defaultStyles from '../config/styles';
+import Text from './Text';
 
-const TextInput = ({ icon, ...otherProps }) => {
+const AppTextInput = ({ icon, ...otherProps }) => {
     return (
         <View style={styles.container}>
             {icon &&
@@ -14,7 +14,7 @@ const TextInput = ({ icon, ...otherProps }) => {
                     style={styles.icon}
                 />
             }
-            <TextInput
+            <Text
                 placeholderTextColor={defaultStyles.colors.medium}
                 style={defaultStyles.text}
                 {...otherProps}
@@ -39,4 +39,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default TextInput;
+export default AppTextInput;

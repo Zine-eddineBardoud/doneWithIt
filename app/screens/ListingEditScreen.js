@@ -8,8 +8,8 @@ import {
     FormPicker as Picker,
     SubmitButton,
 } from "../components/forms";
-import Screen from "../components/Screen";
 import CategoryPickerItem from "../components/CategoryPickerItem";
+import Screen from "../components/Screen";
 
 const validationSchema = Yup.object().shape({
     title: Yup.string().required().min(1).label("Title"),
@@ -19,16 +19,63 @@ const validationSchema = Yup.object().shape({
 });
 
 const categories = [
-    { label: "Furniture", value: 1, backgroundColor: '#fc5c65', icon: 'floor-lamp' },
-    { label: "Clothing", value: 2, backgroundColor: '#2bcbba', icon: 'shoe-heel' },
-    { label: "Camera", value: 3, backgroundColor: '#fed330', icon: 'camera' },
-    { label: "Cars", value: 4, backgroundColor: '#fd9644', icon: 'car' },
-    { label: "Games", value: 5, backgroundColor: '#26de81', icon: 'cards' },
-    { label: "Sports", value: 6, backgroundColor: '#45aaf2', icon: 'basketball' },
-    { label: "Movies & Music", value: 7, backgroundColor: '#4b7bec', icon: 'headphones' },
+    {
+        backgroundColor: "#fc5c65",
+        icon: "floor-lamp",
+        label: "Furniture",
+        value: 1,
+    },
+    {
+        backgroundColor: "#fd9644",
+        icon: "car",
+        label: "Cars",
+        value: 2,
+    },
+    {
+        backgroundColor: "#fed330",
+        icon: "camera",
+        label: "Cameras",
+        value: 3,
+    },
+    {
+        backgroundColor: "#26de81",
+        icon: "cards",
+        label: "Games",
+        value: 4,
+    },
+    {
+        backgroundColor: "#2bcbba",
+        icon: "shoe-heel",
+        label: "Clothing",
+        value: 5,
+    },
+    {
+        backgroundColor: "#45aaf2",
+        icon: "basketball",
+        label: "Sports",
+        value: 6,
+    },
+    {
+        backgroundColor: "#4b7bec",
+        icon: "headphones",
+        label: "Movies & Music",
+        value: 7,
+    },
+    {
+        backgroundColor: "#a55eea",
+        icon: "book-open-variant",
+        label: "Books",
+        value: 8,
+    },
+    {
+        backgroundColor: "#778ca3",
+        icon: "application",
+        label: "Other",
+        value: 9,
+    },
 ];
 
-const ListingEditScreen = () => {
+function ListingEditScreen() {
     return (
         <Screen style={styles.container}>
             <Form
@@ -51,9 +98,9 @@ const ListingEditScreen = () => {
                 <Picker
                     items={categories}
                     name="category"
-                    placeholder="Category"
-                    PickerItemComponent={CategoryPickerItem}
                     numberOfColumns={3}
+                    PickerItemComponent={CategoryPickerItem}
+                    placeholder="Category"
                 />
                 <FormField
                     maxLength={255}
